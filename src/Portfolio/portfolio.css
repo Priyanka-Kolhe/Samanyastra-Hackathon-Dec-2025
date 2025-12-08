@@ -1,0 +1,121 @@
+/* NAVBAR */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+.mobile-menu {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu {
+    display: block !important;
+  }
+}
+
+
+/* MAIN CONTAINER */
+.portfolio-container {
+  background: #f2f2f2;      /* light gray background */
+  min-height: 100vh;
+  padding-bottom: 50px;
+  font-family: "Inter", sans-serif;
+}
+
+/* SECTIONS */
+.section {
+  background: transparent;
+  padding: 60px 20px;
+}
+
+/* HERO SECTION */
+.hero-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: transparent;
+}
+
+/* Make layout neat on smaller screens */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+}
+
+/* ABOUT SECTION */
+.section .about-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* SKILLS GRID IMAGES */
+.section img {
+  transition: 0.3s ease;
+}
+
+.section img:hover {
+  transform: scale(1.1);
+}
+
+/* CARD STYLING (Experience + Projects) */
+.MuiCard-root {
+  background: #ffffff;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-5px);
+}
+
+/* CHIPS */
+.MuiChip-root {
+  background: #e0e0e0 !important;
+  font-weight: 500;
+}
+
+/* HEADINGS */
+.section h4,
+.hero-section h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* PARAGRAPHS */
+.section p,
+.hero-section p {
+  color: #444;
+}
+
+/* PROJECT IMAGES */
+.project-image {
+  border-radius: 12px;
+  height: 100px;
+  width: 100px;
+}
+
+/* GRID CENTER */
+.MuiGrid-root {
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,14 +1,16 @@
-const data = {
-  "profileImage": "portfolio/profile.jpeg",
+export const data = {
+  "profileImage": "images/profile.jpeg",
 
-  "hero": {
+   "hero": {
     "location": "Currently based in California — open to relocate",
     "name": "Alex Johnson",
     "title": "Full-Stack Developer & UI/UX Enthusiast",
     "description": "I create innovative, user-friendly web applications using modern technologies like React.js, Node.js, and MongoDB. With 2+ years of experience in full-stack development, I am dedicated to building seamless digital experiences that combine beautiful design with robust functionality. I thrive on solving complex problems and continuously learning new technologies to deliver exceptional results."
   },
 
-  "about": {
+
+
+    "about": {
     "paragraphs": [
       "My name is Alex Johnson, and I am a Full-Stack Developer with 2+ years of hands-on experience building modern web applications. I specialize in creating responsive user interfaces with React.js and developing scalable backend systems using Node.js and Express.",
       "I have strong expertise in both frontend and backend technologies, working with JavaScript, TypeScript, databases like MongoDB and PostgreSQL, and cloud platforms. This comprehensive skill set enables me to handle complete project lifecycles from concept to deployment.",
@@ -17,18 +19,22 @@ const data = {
     ]
   },
 
-  "languages": [
-    { "name": "HTML5", "img": "icons/html5.png" },
-    { "name": "CSS3", "img": "icons/css3.png" },
+
+
+ "languages": [
+    { "name": "HTML5", "img": "icons/html.png" },
+    { "name": "CSS3", "img": "icons/css.png" },
     { "name": "JavaScript", "img": "icons/javascript.png" },
     { "name": "TypeScript", "img": "icons/typescript.png" },
     { "name": "React", "img": "icons/react.png" },
     { "name": "Tailwind", "img": "icons/tailwind.png" }
   ],
 
+
+
   "socialLinks": [
-    { "icon": "linkedin", "href": "https://linkedin.com/in/alexjohnson" },
-    { "icon": "github", "href": "https://github.com/alexjohnson" },
+    { "icon": "linkedin", "href": "https://www.linkedin.com/in/priyanka-kolhe-aba0ba2b2/" },
+    { "icon": "github", "href": "https://github.com/Priyanka-Kolhe" },
     { "icon": "instagram", "href": "https://instagram.com" },
     { "icon": "twitter", "href": "https://twitter.com" }
   ],
