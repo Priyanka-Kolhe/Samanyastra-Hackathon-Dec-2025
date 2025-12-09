@@ -15,15 +15,49 @@ import {
 import { data } from "../data";
 import "./portfolio.css";
 
+
 export default function Portfolio() {
   const theme = createTheme({
     palette: { mode: "light" },
   });
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Smooth scroll
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
+      {/* ================= NAVBAR ================= */}
+      <nav className="navbar">
+        <div className="nav-logo" onClick={() => window.scrollTo(0, 0)}>
+          {data.hero.name}
+        </div>
+
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <li onClick={() => scrollToSection("hero")}>Home</li>
+          <li onClick={() => scrollToSection("about")}>About</li>
+          <li onClick={() => scrollToSection("skills")}>Skills</li>
+          <li onClick={() => scrollToSection("experience")}>Experience</li>
+          <li onClick={() => scrollToSection("projects")}>Projects</li>
+        </ul>
+
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+
+      {/* ================= PORTFOLIO CONTENT ================= */}
       <Box className="portfolio-container">
 
         {/* HERO SECTION */}
@@ -57,7 +91,7 @@ export default function Portfolio() {
               {data.hero.title}
             </Typography>
 
-            <Typography sx={{ mt: 1, fontSize: "18px"}}>
+            <Typography sx={{ mt: 1, fontSize: "18px" }}>
               {data.hero.location}
             </Typography>
 
@@ -137,12 +171,12 @@ export default function Portfolio() {
                     </svg>
                   )}
 
+                  {/* TWITTER (X) ICON */}
                   {link.icon === "twitter" && (
                     <svg width="24" height="24" viewBox="0 0 24 24" color="black">
-                      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0 1.97-2.48 9 9 0 0 1-2.88 1.1 4.52 4.52 0 0 0-7.69 4.13A12.94 12.94 0 0 1 1.64.88a4.82 4.82 0 0 0-.65 2.43c0 1.67.82 3.15 2.07 4.01A4.39 4.39 0 0 1 .96 7v.06c0 2.33 1.6 4.27 3.73 4.71a4.52 4.52 0 0 1-2.15.09c.61 2 2.39 3.44 4.49 3.48A9.06 9.06 0 0 1 0 19.54 12.78 12.78 0 0 0 6.92 22c8.3 0 12.84-7 12.84-13.07 0-.2 0-.39-.01-.58A9.55 9.55 0 0 0 23 3z" />
+                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 0 0 1.88-2.35 8.43 8.43 0 0 1-2.7 1.03 4.22 4.22 0 0 0-7.3 3.84A12 12 0 0 1 3.15 4.6a4.22 4.22 0 0 0 1.31 5.63 4.18 4.18 0 0 1-1.9-.53v.05a4.23 4.23 0 0 0 3.38 4.13 4.3 4.3 0 0 1-1.89.07 4.23 4.23 0 0 0 3.95 2.94A8.48 8.48 0 0 1 2 19.54a12 12 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22.46 6z" />
                     </svg>
                   )}
-
                 </IconButton>
               ))}
             </Box>
@@ -289,7 +323,11 @@ export default function Portfolio() {
 
                   <Box sx={{ mt: 2 }}>
                     {job.skills.map((s) => (
-                      <Chip key={s} label={s} sx={{ mr: 1, mb: 1, color: "blue" }} />
+                      <Chip
+                        key={s}
+                        label={s}
+                        sx={{ mr: 1, mb: 1, color: "blue" }}
+                      />
                     ))}
                   </Box>
                 </Card>
@@ -322,13 +360,19 @@ export default function Portfolio() {
                     },
                   }}
                 >
-                  <Typography variant="h6" fontWeight="bold">{p.title}</Typography>
+                  <Typography variant="h6" fontWeight="bold">
+                    {p.title}
+                  </Typography>
 
                   <Typography sx={{ mt: 1 }}>{p.description}</Typography>
 
                   <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap" }}>
                     {(p.tech || p.skills).map((item) => (
-                      <Chip key={item} label={item} sx={{ mr: 1, mb: 1, color: "blue" }} />
+                      <Chip
+                        key={item}
+                        label={item}
+                        sx={{ mr: 1, mb: 1, color: "blue" }}
+                      />
                     ))}
                   </Box>
                 </Card>
